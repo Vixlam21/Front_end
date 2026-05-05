@@ -1,0 +1,2508 @@
+/* Mobile Header */
+.mobile-header {
+    display: none;
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.mobile-search {
+    flex: 1;
+    display: flex;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.mobile-search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+.mobile-search-input::placeholder {
+    color: #999;
+}
+
+.mobile-search-btn {
+    background: none;
+    border: none;
+    padding: 12px 15px;
+    color: #666;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Hide desktop elements on mobile */
+@media (max-width: 768px) {
+    .mobile-header {
+        display: block;
+    }
+
+    .top-banner,
+    .social-bar,
+    .header,
+    .main-nav {
+        display: none;
+    }
+
+    .hero-text {
+        padding: 60px 20px 40px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Top Banner */
+.top-banner {
+    background-color: #fdf5e0 !important; /* Màu vàng kem nhạt giống ảnh */
+    padding: 12px 0;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.top-banner p {
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+.close-banner {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Social Bar */
+.social-bar {
+    background-color: #fff;
+    padding: 12px 0;
+}
+
+.social-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 18px;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #666;
+}
+
+.header-icons {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.header-icons a {
+    color: #333;
+    font-size: 20px;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background-color: #d0d0d0;
+}
+
+.header-icons a:hover {
+    color: #666;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: 8px;
+    background-color: #f5a623;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.brand-name h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #000;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: #fff;
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+}
+
+.main-nav li {
+    padding: 18px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #d0d0d0;
+}
+
+.main-nav li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #d0d0d0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #e8ddd4;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 650px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 650px;
+}
+
+.hero-text {
+    flex: 0 0 50%;
+    padding-left: 300px;
+    padding-right: 40px;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #5e4b4b;
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+
+.hero-title {
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 0.9;
+    margin-bottom: 25px;
+    letter-spacing: 0px;
+    color: #5e4b4b;
+}
+
+.hero-title span {
+    font-size: 64px;
+    color: #4e3e3e;
+    font-weight: 800;
+    display: block;
+}
+
+.hero-description {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 30px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 26px;
+    border: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3f9f92;
+}
+
+.hero-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 300px;
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.hero-dots .dot {
+    width: 30px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.hero-dots .dot.active {
+    background-color: #fff;
+    height: 6px;
+    transform: translateY(-4px);
+}
+
+.hero-dots .dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+hero-dots .dot {
+    width: 32px;
+    height: 2px;
+    background-color: #c9bdb3;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-dots .dot.active {
+    background-color: #ffffff;
+}
+
+.hero-dots .dot:hover {
+    background-color: #666;
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.quote {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.quote p {
+    font-size: 25px;
+    line-height: 1.8;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 15px;
+}
+
+.quote cite {
+    font-size: 14px;
+    color: #999;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+/* Featured Products */
+.featured-products {
+    padding: 60px 0 !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.products-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.product-card {
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Side Cards (Left & Right) */
+.product-card.side-card {
+    background-color: #fff;
+}
+
+.product-card.side-card .product-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: #e8e8e8;
+}
+
+.product-card.side-card .product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product-card.side-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-card.side-card .product-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.product-card.side-card .product-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-card.side-card .product-description {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Center Featured Card */
+.product-card.center-featured {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-header {
+    padding: 0 25px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.featured-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.featured-header p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.product-card.center-featured .product-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: #e8e8e8;
+}
+
+.product-card.center-featured .product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product-card.center-featured:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Recommended Section */
+.recommended-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.recommended-section .products-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.products-grid-4 .product-card {
+    background-color: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.products-grid-4 .product-card:hover {
+    transform: translateY(-5px);
+}
+
+.products-grid-4 .product-card .product-image {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.products-grid-4 .product-card .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.products-grid-4 .product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.products-grid-4 .product-card .product-info {
+    padding: 20px 15px;
+    text-align: left;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+.product-rating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.product-rating i {
+    color: #333;
+    font-size: 12px;
+}
+
+.product-rating .fas.fa-star {
+    color: #333;
+}
+
+.product-rating .far.fa-star {
+    color: #ddd;
+}
+
+.product-rating .fas.fa-star-half-alt {
+    color: #333;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sale-price {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.color-options {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.color-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+}
+
+.color-image:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.color-image.active {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.color-more {
+    font-size: 12px;
+    color: #999;
+    margin-left: 4px;
+}
+
+/* Top Trending Section */
+.top-trending-section {
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.trending-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: auto;
+}
+
+.trending-image {
+    background-color: #f0e4d7;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.trending-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.trending-content {
+    background-color: #f8f8f8;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.trending-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.trending-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    pointer-events: all;
+}
+
+.nav-arrow:hover {
+    color: #333;
+}
+
+.trending-product {
+    text-align: center;
+    max-width: 250px;
+}
+
+.trending-product .product-image {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.trending-product .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.trending-product .product-details {
+    padding: 0 10px;
+}
+
+.trending-product .product-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.trending-product .product-rating {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.trending-product .product-rating i {
+    color: #333;
+    font-size: 12px;
+}
+
+.trending-product .product-rating .fas.fa-star {
+    color: #333;
+}
+
+.trending-product .product-rating .far.fa-star {
+    color: #ddd;
+}
+
+.trending-product .price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.trending-product .color-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.trending-product .color-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+}
+
+.trending-product .color-image.active {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+.trending-product .color-image:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.trending-product .color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.trending-product .color-dot.active {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+.trending-product .color-dot:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+/* Best Sellers Section */
+.best-sellers-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.best-sellers-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.best-sellers-section .products-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.best-sellers-section .product-card {
+    background-color: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.best-sellers-section .product-card:hover {
+    transform: translateY(-5px);
+}
+
+.best-sellers-section .product-card .product-image {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.best-sellers-section .product-card .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.best-sellers-section .product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.best-sellers-section .product-card .product-info {
+    padding: 20px 15px;
+    text-align: left;
+}
+
+.best-sellers-section .product-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+.best-sellers-section .product-rating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.best-sellers-section .product-rating i {
+    color: #333;
+    font-size: 12px;
+}
+
+.best-sellers-section .product-rating .fas.fa-star {
+    color: #333;
+}
+
+.best-sellers-section .product-rating .far.fa-star {
+    color: #ddd;
+}
+
+.best-sellers-section .product-rating .fas.fa-star-half-alt {
+    color: #333;
+}
+
+.best-sellers-section .price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.best-sellers-section .color-options {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.best-sellers-section .color-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+}
+
+.best-sellers-section .color-image:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.best-sellers-section .color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.best-sellers-section .color-dot:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+/* Featured Product Banner Section */
+.featured-product-banner {
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.banner-layout {
+    display: flex;
+    min-height: 400px;
+    position: relative;
+}
+
+.banner-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 35px;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10;
+    min-width: 350px;
+}
+
+.featured-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.featured-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.featured-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-shop-now {
+    background-color: #fff;
+    color: #333;
+    padding: 12px 25px;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-shop-now:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Customer Reviews Section */
+.customer-reviews-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.customer-reviews-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-left: calc(-50vw + 50%);
+}
+
+.customer-reviews-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reviews-grid::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #e0e0e0;
+    transform: translateX(-50%);
+}
+
+.review-card {
+    position: relative;
+    padding: 0 20px;
+    padding-left: 60px;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 40px;
+    color: #ddd;
+}
+
+.review-rating {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+}
+
+.review-rating i {
+    color: #333;
+    font-size: 14px;
+}
+
+.review-rating .fas.fa-star {
+    color: #333;
+}
+
+.review-rating .far.fa-star {
+    color: #ddd;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: normal;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px #ddd;
+}
+
+.reviewer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.reviewer-location {
+    font-size: 14px;
+    color: #999;
+    font-weight: 400;
+}
+
+.review-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.review-pagination .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-pagination .dot.active {
+    background-color: #333;
+}
+
+.review-pagination .dot:hover {
+    background-color: #666;
+}
+
+/* Khung ngoài cùng đóng vai trò như một chiếc "Cửa sổ" */
+.reviews-slider-wrapper {
+    width: 100%;
+    overflow: hidden; /* CỰC KỲ QUAN TRỌNG: Ẩn các slide thừa đi */
+    position: relative;
+}
+
+/* Thanh trượt dài gấp 3 lần khung cửa sổ, chứa tất cả các slide */
+.reviews-track {
+    display: flex; /* Bắt buộc để các slide xếp hàng ngang thay vì dọc */
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Mỗi slide sẽ có độ rộng bằng đúng 100% của khung cửa sổ */
+.review-slide {
+    flex: 0 0 100%; /* Bắt buộc để mỗi slide chiếm đủ 1 màn hình */
+    width: 100%;
+}
+
+/* Blog Section */
+.blog-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.blog-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-image {
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 25px 20px;
+}
+
+.blog-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.blog-date i {
+    font-size: 14px;
+}
+
+.blog-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+/* Instagram Section - New Bootstrap Layout */
+.instagram-section {
+    padding: 80px 0;
+    padding-bottom: 300px;
+    background-color: #f8f5f0;
+}
+
+.instagram-content {
+    padding-left: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.instagram-icon {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.instagram-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.instagram-handle {
+    font-size: 20px;
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.instagram-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.instagram-description strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.instagram-link {
+    font-size: 16px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: #333;
+}
+
+/* New Gallery Grid Layout */
+.instagram-gallery-new {
+    padding-left: 110px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 220px 210px 170px;
+    grid-template-rows: 120px 130px 140px 130px;
+    gap: 12px;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Grid positioning theo sơ đồ */
+/* Ảnh 1 - Trái (170x250px) - cao hơn, từ hàng 2 đến 4 */
+.gallery-item.item-1 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    width: 170px;
+}
+
+/* Ảnh 2 - Giữa - cao hơn ảnh 1, phần cuối ngang với ảnh 1 */
+.gallery-item.item-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    margin-left: -50px;
+}
+
+/* Ảnh 3 - Phải giữa (170x130px) - ở giữa, trên ảnh 6 */
+.gallery-item.item-3 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    top: 30px;
+}
+
+/* Ảnh 4 - Trái dưới - cùng khởi đầu với ảnh 5, nằm dưới ảnh 1 */
+.gallery-item.item-4 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    width: 200px;
+}
+
+/* Ảnh 5 - Giữa dưới - cùng khởi đầu với ảnh 4, nằm dưới ảnh 2 */
+.gallery-item.item-5 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    margin-left: -20px;
+    height: 300px;
+}
+
+/* Ảnh 6 - Phải dưới (170x270px) - giữ nguyên vị trí, chiếm 2 hàng */
+.gallery-item.item-6 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    top: 170px;
+}
+
+/* Responsive cho Instagram Gallery */
+@media (max-width: 1200px) {
+    .instagram-content {
+        padding: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+        grid-template-rows: repeat(6, 70px);
+        height: 440px;
+        max-width: 550px;
+    }
+}
+
+/* Responsive cho Instagram Gallery */
+@media (max-width: 1200px) {
+    .instagram-content {
+        padding: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 150px 350px 150px;
+        grid-template-rows: 100px 110px 120px;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-section {
+        padding: 60px 0;
+    }
+
+    .instagram-content {
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .instagram-title {
+        font-size: 28px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 120px);
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    /* Mobile layout - 2 cột */
+    .gallery-item.item-1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .gallery-item.item-2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+
+    .gallery-item.item-3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .gallery-item.item-4 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .gallery-item.item-5 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .gallery-item.item-6 {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 80px 120px 70px;
+        grid-template-rows: 70px 80px 90px;
+        gap: 6px;
+        max-width: 280px;
+    }
+
+    /* Keep same grid positioning but even smaller */
+    .gallery-item.item-1,
+    .gallery-item.item-2,
+    .gallery-item.item-3,
+    .gallery-item.item-4,
+    .gallery-item.item-5,
+    .gallery-item.item-6 {
+        /* Keep original positioning */
+    }
+
+    .gallery-item.item-1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+
+    .gallery-item.item-2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+
+    .gallery-item.item-3 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .gallery-item.item-4 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .gallery-item.item-5 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .gallery-item.item-6 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+    }
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: -50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.feature-icon {
+    font-size: 36px;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.feature-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Bottom Banner */
+.bottom-banner {
+    padding: 0;
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.banner-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-item.featured-product {
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.featured-content {
+    text-align: center;
+}
+
+.featured-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.featured-content .product-image {
+    margin-bottom: 20px;
+}
+
+.featured-content .product-image img {
+    max-width: 200px;
+}
+
+.product-details {
+    margin-top: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #efecde;
+    padding: 60px 0 20px;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #333;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.payment-icon {
+    height: 24px;
+    width: auto;
+}
+
+.newsletter-section p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+}
+
+.newsletter-btn {
+    background-color: #222; /* Màu nền đen đậm */
+    color: #fff;
+    padding: 12px 25px; /* Tăng chiều ngang một chút để chừa chỗ cho mũi tên */
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Chuyển thành 'all' để animate mượt mọi thuộc tính */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-btn::after {
+    content: '\2192'; /* Mã unicode của mũi tên hướng phải (→) */
+    opacity: 0;
+    max-width: 0;
+    margin-left: 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #c6c4c4;
+}
+
+.newsletter-btn:hover::after {
+    opacity: 1;
+    max-width: 20px; /* Mở rộng chiều ngang để mũi tên xuất hiện */
+    margin-left: 8px; /* Khoảng cách giữa chữ Join và mũi tên */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #666;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #ffffff;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.footer-bottom p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        min-height: 500px;
+    }
+
+    .hero-text {
+        padding-left: 40px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .hero-image {
+        height: 500px;
+    }
+
+    .hero-dots {
+        left: 40px;
+    }
+
+    .products-grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trending-content {
+        padding: 40px 60px;
+    }
+
+    .best-sellers-section .products-grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .banner-layout {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .banner-content-overlay {
+        position: static;
+        transform: none;
+        margin: 20px;
+        min-width: auto;
+        background-color: #f0ebe6;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .reviews-grid::before {
+        display: none;
+    }
+
+    .customer-reviews-section {
+        padding: 60px 0;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-section {
+        padding: 60px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-bar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-menu ul {
+        gap: 20px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-text {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        margin: 0 auto 35px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .hero-dots {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+
+    .products-grid-3,
+    .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Featured Products Mobile Layout - Force 2 columns */
+    .featured-products .container .products-grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    /* Recommended Section - 8 ảnh thành 2 ảnh mỗi hàng */
+    .recommended-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Best Sellers Section - 2 ảnh mỗi hàng */
+    .best-sellers-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Featured Products Mobile Layout */
+    .products-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .product-card.center-featured {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card.center-featured .product-image {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .product-card.center-featured .featured-header {
+        order: 2;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .featured-header h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .featured-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .banner-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .trending-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-content {
+        padding: 40px 30px;
+    }
+
+    .best-sellers-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-content-overlay {
+        padding: 30px 25px;
+        min-width: 300px;
+    }
+
+    .featured-title {
+        font-size: 20px;
+    }
+
+    .featured-description {
+        font-size: 12px;
+    }
+
+    .customer-reviews-section {
+        padding: 50px 0;
+    }
+
+    .review-text {
+        font-size: 15px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-section {
+        padding: 50px 0;
+    }
+
+    .blog-image {
+        height: 300px;
+    }
+
+    /* Instagram Mobile Layout - Keep original grid structure but smaller */
+    .instagram-section {
+        padding: 40px 0;
+    }
+
+    .instagram-content {
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .instagram-title {
+        font-size: 24px;
+    }
+
+    .instagram-gallery-new {
+        padding-left: 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 120px 130px 120px;
+        grid-template-rows: 140px 140px;
+        gap: 10px;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    /* Mobile layout - adjust positioning */
+    .gallery-item.item-1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: auto;
+        margin-left: 0;
+    }
+
+    .gallery-item.item-2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-left: 0;
+    }
+
+    .gallery-item.item-3 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .gallery-item.item-4 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        width: auto;
+    }
+
+    .gallery-item.item-5 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .gallery-item.item-6 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        margin-left: 0;
+        top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    /* Keep 2 images per row for product grids on mobile */
+    .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Recommended Section - maintain 2 images per row */
+    .recommended-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Best Sellers Section - maintain 2 images per row */
+    .best-sellers-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Featured products - 2 images per row on mobile */
+    .products-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .featured-title {
+        font-size: 20px;
+    }
+
+    .banner-content {
+        padding: 30px 20px;
+    }
+
+    .nav-menu ul {
+        gap: 15px;
+    }
+}
+
+/* Extra small screens - maintain 2 columns for product grids */
+@media (max-width: 360px) {
+
+    /* Still keep 2 images per row even on very small screens */
+    .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .recommended-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .best-sellers-section .products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* Reduce product card image height for very small screens */
+    .products-grid-4 .product-card .product-image {
+        height: 200px;
+    }
+
+    /* Featured products maintain horizontal layout */
+    .products-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .product-card.side-card .product-image {
+        height: 180px;
+    }
+}
+
+/* DEBUG CSS - Mobile Featured Products ----*/
+@media (max-width: 768px) {
+    /* Ép kiểu grid 2 cột cho khung chứa */
+    .featured-products .container .products-grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    /* Thẻ trung tâm nổi bật chiếm toàn bộ chiều ngang (2 cột) */
+    .product-card.center-featured {
+        grid-column: 1 / -1; /* Chiếm từ cột đầu đến cột cuối */
+        order: -1; /* Đẩy lên hiển thị đầu tiên */
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Đảo thứ tự ảnh và text của thẻ center trên mobile */
+    .product-card.center-featured .product-image {
+        order: 1;
+        margin-bottom: 15px;
+    }
+
+    .product-card.center-featured .featured-header {
+        order: 2;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .product-card.center-featured .featured-header h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    /* Căn chỉnh 2 thẻ phụ (side-card) nằm ngang nhau */
+    .product-card.side-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card.side-card .product-image {
+        height: 220px; /* Cố định chiều cao để 2 thẻ bằng nhau */
+        background-color: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-card.side-card .product-image img {
+        max-height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .product-card.side-card .product-info {
+        padding: 15px 5px 0;
+        text-align: center;
+    }
+
+    .product-card.side-card .product-info h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .product-card.side-card .product-description {
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Cắt chữ nếu quá 2 dòng để giữ layout đều */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+/* Tối ưu thêm cho màn hình điện thoại nhỏ */
+@media (max-width: 480px) {
+    .product-card.center-featured .featured-header h3 {
+        font-size: 20px;
+    }
+
+    .product-card.center-featured .featured-header p {
+        font-size: 13px;
+    }
+
+    .product-card.side-card .product-image {
+        height: 180px; /* Thu nhỏ ảnh trên màn hình hẹp */
+    }
+
+    .product-card.side-card .product-info h3 {
+        font-size: 13px;
+    }
+}
+
+/* Tối ưu cho các dòng điện thoại siêu nhỏ (iPhone SE, Galaxy Fold screen...) */
+@media (max-width: 360px) {
+    .featured-products .container .products-grid-3 {
+        gap: 10px !important;
+    }
+
+    .product-card.side-card .product-image {
+        height: 150px;
+    }
+
+    .product-card.side-card .product-info {
+        padding: 10px 0 0;
+    }
+}
+
+/* 1. link hover */
+.main-nav ul li a {
+    position: relative;
+    display: inline-block;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: -4px;
+    left: 0;
+    background-color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    /* 1. Căn trái toàn bộ phần Text */
+    .instagram-content {
+        text-align: left !important;
+        padding: 40px 20px 20px !important;
+    }
+    
+    .instagram-icon {
+        text-align: left !important;
+        margin-bottom: 15px;
+    }
+    
+    .instagram-title {
+        font-size: 36px !important;
+        text-align: left !important;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .instagram-handle {
+        text-align: left !important;
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+    
+    .instagram-description {
+        text-align: left !important;
+        font-size: 15px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    
+    .instagram-link {
+        text-align: left !important;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    /* 2. Tắt hiệu ứng trượt (Slider) để ép hiển thị dạng lưới tĩnh */
+    .instagram-slider-container {
+        padding-bottom: 0 !important;
+    }
+    
+    .instagram-track {
+        transform: none !important; 
+        display: block !important;
+    }
+    
+    /* Ẩn slide phụ và các dấu chấm chuyển slide */
+    .instagram-slide:nth-child(n+2), 
+    .insta-dots {
+        display: none !important; 
+    }
+
+    /* 3. Setup Lưới 3 cột Flexbox để tạo Masonry Layout */
+    .instagram-gallery-new {
+        padding: 0 15px 40px !important;
+    }
+
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        /* Giới hạn chiều cao tổng để ép các ảnh tràn sang thành 3 cột */
+        height: 420px !important; 
+        gap: 0 !important; /* Dùng margin trên từng item thay vì gap để dễ kiểm soát */
+        margin: 0 !important;
+        max-width: 100% !important;
+        align-content: space-between;
+    }
+
+    .gallery-item {
+        /* Chia ngang 3 cột, chừa một chút khoảng cách */
+        width: calc(33.333% - 7px) !important; 
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* 4. Điều chỉnh vị trí, chiều cao để cột 1 và 3 thụt xuống so với cột giữa */
+    
+    /* Cột 1 (Bên trái) */
+    .item-1 { order: 1; height: 180px !important; margin-top: 50px !important; }
+    .item-4 { order: 2; height: 110px !important; margin-top: 10px !important; }
+
+    /* Cột 2 (Giữa - Cao nhất) */
+    .item-2 { order: 3; height: 230px !important; margin-top: 0 !important; }
+    .item-5 { order: 4; height: 160px !important; margin-top: 10px !important; }
+
+    /* Cột 3 (Bên phải - Bằng mép cột 1) */
+    .item-3 { order: 5; height: 120px !important; margin-top: 50px !important; }
+    .item-6 { order: 6; height: 170px !important; margin-top: 10px !important; }
+}
+
+/* Tinh chỉnh riêng cho màn hình điện thoại nhỏ (iPhone SE, các dòng android bé) */
+@media (max-width: 480px) {
+    .gallery-grid {
+        height: 350px !important; /* Rút ngắn chiều cao tổng lại */
+    }
+    .item-1 { height: 140px !important; margin-top: 40px !important; }
+    .item-4 { height: 90px !important; margin-top: 10px !important; }
+    
+    .item-2 { height: 190px !important; margin-top: 0 !important; }
+    .item-5 { height: 130px !important; margin-top: 10px !important; }
+    
+    .item-3 { height: 100px !important; margin-top: 40px !important; }
+    .item-6 { height: 140px !important; margin-top: 10px !important; }
+}
+
+/* =========================================PURE CSS BACK TO TOP========================================= */
+
+/* 1. Kích hoạt tính năng cuộn mượt cho toàn bộ trang */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Thiết kế nút giống ảnh mẫu */
+.pure-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #ddd; /* Viền xám mỏng */
+    border-radius: 50%; /* Bo tròn hoàn toàn */
+    font-size: 16px;
+    
+    /* Căn giữa icon bên trong */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-decoration: none; /* Xóa gạch chân mặc định của thẻ link */
+    z-index: 9999; /* Đảm bảo nút luôn nổi lên trên cùng */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt */
+}
+
+/* Hiệu ứng khi rê chuột vào */
+.pure-back-to-top:hover {
+    background-color: #333; /* Đổi nền thành đen */
+    color: #fff; /* Đổi icon thành trắng */
+    border-color: #333;
+    transform: translateY(-3px); /* Hơi nảy lên một chút */
+}
+
+/* Tinh chỉnh cho giao diện Mobile */
+@media (max-width: 768px) {
+    .pure-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}

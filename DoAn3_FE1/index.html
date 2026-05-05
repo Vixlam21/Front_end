@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salehub - Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Mobile Header (Hidden on desktop) -->
+    <div class="mobile-header">
+        <div class="container">
+            <div class="mobile-header-content">
+                <div class="mobile-logo">
+                    <h1>Salehub</h1>
+                </div>
+                <div class="mobile-search">
+                    <input type="text" placeholder="What are you looking for ?" class="mobile-search-input">
+                    <button class="mobile-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <p>Free shipping for order above $200. Shop now !</p>
+            <button class="close-banner">&times;</button>
+        </div>
+    </div>
+
+    <!-- Social Bar -->
+    <div class="social-bar">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="header-icons">
+                <a href="#search"><i class="fas fa-search"></i></a>
+                <a href="#user"><i class="fas fa-user"></i></a>
+                <a href="#cart" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="brand-name">
+                <h1>Salehub</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#pages">PAGES</a></li>
+                <li><a href="#women">WOMEN</a></li>
+                <li><a href="#men">MEN</a></li>
+                <li><a href="#blog">BLOG</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-subtitle">NEW ARRIVAL</p>
+                <h2 class="hero-title">SUMMER<br><span>DRESSES</span></h2>
+                <p class="hero-description">Uncompromising in style, quality and performance</p>
+                <button class="btn-primary">SHOP THE COLLECTION</button>
+            </div>
+        </div>
+        <div class="hero-dots" id="heroDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <script>
+        // Danh sách các ảnh hero
+        const heroImages = [
+            'public/img/1.jpg',
+            'public/img/2.jpg',
+            'public/img/3.jpg'
+        ];
+
+        let currentIndex = 0;
+        const heroSection = document.getElementById('heroSection');
+        const dots = document.querySelectorAll('.hero-dots .dot');
+
+        // Hàm chuyển ảnh
+        function changeHeroImage(index) {
+            currentIndex = index;
+            heroSection.style.backgroundImage = `url('${heroImages[index]}')`;
+
+            // Cập nhật dots
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Tự động chuyển ảnh sau 5 giây
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % heroImages.length;
+            changeHeroImage(currentIndex);
+        }, 5000);
+
+        // Click vào dot để chuyển ảnh
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                changeHeroImage(index);
+            });
+        });
+
+        // Khởi tạo ảnh đầu tiên
+        changeHeroImage(0);
+    </script>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                <p>"There are no ugly women, there are just the ones who<br>don't know how to make them look good."</p>
+                <cite>—— SaleHub Fashion</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="products-grid-3">
+                <!-- Product 1 - Left -->
+                <div class="product-card side-card">
+                    <div class="product-image">
+                        <img src="public/img/4.jpg" alt="Solid Crop Slim Cami Top">
+                    </div>
+                    <div class="product-info">
+                        <h3>Solid Crop Slim Cami Top</h3>
+                        <p class="product-description">Explore the impeccably crafted styles defined by a modern
+                            Americana aesthetic.</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Center Featured -->
+                <div class="product-card center-featured">
+                    <div class="featured-header">
+                        <h3>Denim Jacket Outfits</h3>
+                        <p>See our top-picks for jean jackets that are oversized, distressed, and downright cool.</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="public/img/5.jpg" alt="Denim Jacket">
+                    </div>
+                </div>
+
+                <!-- Product 3 - Right -->
+                <div class="product-card side-card">
+                    <div class="product-image">
+                        <img src="public/img/6.jpg" alt="High Turtleneck Jumper">
+                    </div>
+                    <div class="product-info">
+                        <h3>High Turtleneck Jumper</h3>
+                        <p class="product-description">Explore the impeccably crafted styles defined by a modern
+                            Americana aesthetic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Section -->
+    <section class="recommended-section">
+        <div class="container">
+            <h2 class="section-title">RECOMMENDED FOR YOU</h2>
+
+            <div class="products-grid-4">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/7.jpg" alt="Eco aware long sleeve blouse">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Eco aware long sleeve blouse</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="price">$47.00</p>
+                        <div class="color-options">
+                            <img src="public/img/7.jpg" alt="Color option 1" class="color-image">
+                            <img src="public/img/15.jpg" alt="Color option 2" class="color-image">
+                            <img src="public/img/16.jpg" alt="Color option 3" class="color-image">
+                            <span class="color-more">+2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/8.jpg" alt="Eco Aware organic cotton top">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Eco Aware organic cotton top</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$39.00</p>
+                        <div class="color-options">
+                            <img src="public/img/8.jpg" alt="Color option 1" class="color-image">
+                            <img src="public/img/17.jpg" alt="Color option 2" class="color-image">
+                            <img src="public/img/18.jpg" alt="Color option 3" class="color-image">
+                            <span class="color-more">+3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/9.jpg" alt="Blended wool coat">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Blended wool coat</h3>
+                        <div class="product-rating">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="price">$154.00 <span class="sale-price">Sold out</span></p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/10.jpg" alt="High waist cargo joggers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">High waist cargo joggers</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$72.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/11.jpg" alt="Oversized jacket with denim panels">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Oversized jacket with denim panels</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$33.00</p>
+                        <div class="color-options">
+                            <img src="public/img/11.jpg" alt="Color option 1" class="color-image">
+                            <img src="public/img/19.jpg" alt="Color option 2" class="color-image">
+                            <img src="public/img/20.jpg" alt="Color option 3" class="color-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/12.jpg" alt="High collar quilted jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">High collar quilted jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$132.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/13.jpg" alt="Basic sweat joggers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Basic sweat joggers</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$11.00 <span class="sale-price">$19.00</span></p>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/14.jpg" alt="Loose fit trousers with belt">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Loose fit trousers with belt</h3>
+                        <div class="product-rating">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="price">$84.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Trending Section -->
+    <section class="top-trending-section">
+        <div class="container">
+            <div class="trending-layout">
+                <!-- Left Image -->
+                <div class="trending-image">
+                    <img src="public/img/21.png" alt="Fashion Model">
+                </div>
+
+                <!-- Right Content -->
+                <div class="trending-content">
+                    <h2 class="trending-title">TOP TRENDING</h2>
+
+                    <!-- Navigation Arrows -->
+                    <div class="trending-nav">
+                        <button class="nav-arrow nav-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-arrow nav-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Product Display -->
+                    <div class="trending-product">
+                        <div class="product-image">
+                            <img src="public/img/22.jpg" alt="Faux suede biker jacket">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Faux suede biker jacket</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p class="price">$60.00</p>
+                            <div class="color-options">
+                                <img src="public/img/22.jpg" alt="Color option 1" class="color-image active">
+                                <img src="public/img/23.jpg" alt="Color option 2" class="color-image">
+                                <img src="public/img/24.jpg" alt="Color option 3" class="color-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="best-sellers-section">
+        <div class="container">
+            <h2 class="section-title">BEST SELLERS</h2>
+
+            <div class="products-grid-4">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/25.jpg" alt="Classic one-breasted jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic one-breasted jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$21.00</p>
+                        <div class="color-options">
+                            <img src="public/img/25.jpg" alt="Color option 1" class="color-image">
+                            <img src="public/img/29.jpg" alt="Color option 2" class="color-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/26.jpg" alt="Black Bomber Jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Black Bomber Jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="price">$16.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/27.jpg" alt="Black Denim Jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Black Denim Jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$85.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="public/img/28.jpg" alt="Lightweight bomber jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Lightweight bomber jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$74.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product Banner Section -->
+    <section class="featured-product-banner">
+        <div class="banner-layout">
+            <!-- Left Image -->
+            <div class="banner-image">
+                <img src="public/img/30.jpg" alt="Scallop Trim Solid Tee - Front View">
+            </div>
+
+            <!-- Right Image -->
+            <div class="banner-image">
+                <img src="public/img/31.jpg" alt="Scallop Trim Solid Tee - Back View">
+            </div>
+
+            <!-- Overlay Content -->
+            <div class="banner-content-overlay">
+                <p class="featured-label">FEATURED PRODUCTS</p>
+                <h2 class="featured-title">SCALLOP TRIM SOLID TEE</h2>
+                <p class="featured-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                    Vivamus egestas accumsan velit et malesuada ante<br>
+                    tempus non viverra
+                </p>
+                <button class="btn-shop-now">SHOP NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="customer-reviews-section">
+        <div class="container">
+            <h2 class="section-title">FROM OUR CUSTOMERS</h2>
+
+            <div class="reviews-slider-wrapper">
+                <div class="reviews-track" id="reviewsTrack">
+
+                    <div class="review-slide">
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Best purchase I've made this winter! The color and knitting
+                                        are exquisite and it's so comfy! Went from NYC to Miami without ever taking it
+                                        off. Super cute!!"</p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/32.png" alt="Christina M." class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— Christina M. <span
+                                                    class="reviewer-location">/ From Canada</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Clothers are addicting! Love this brand and shoe. The arch
+                                        support is wonderful and helps for long hours on your body. The narrow heel is
+                                        wonderfully !"</p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/33.png" alt="Dean D." class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— Dean D. <span
+                                                    class="reviewer-location">/ Australia</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Got the floral summer dress and it fits perfectly! The
+                                        fabric is breathable and perfect for the beach. Shipping was incredibly fast
+                                        too."</p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/15.jpg" alt="Jessica Alba" class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— Jessica A. <span
+                                                    class="reviewer-location">/ USA</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"The sunglasses are top tier. They look exactly like the
+                                        designer ones but cost a fraction of the price. Highly recommend to everyone."
+                                    </p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/16.jpg" alt="Tom H." class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— Tom H. <span
+                                                    class="reviewer-location">/ UK</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p class="review-text">"The leather jacket is so edgy and stylish. It instantly
+                                        elevates any basic outfit. The zippers feel very premium and sturdy."</p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/19.jpg" alt="Emma Stone" class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— Emma S. <span
+                                                    class="reviewer-location">/ France</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Been using the tote bag for my daily commute. It holds my
+                                        laptop perfectly and the straps are very comfortable on the shoulder."</p>
+                                    <div class="reviewer-info">
+                                        <img src="public/img/20.jpg" alt="David Beckham" class="reviewer-avatar">
+                                        <div class="reviewer-details"><span class="reviewer-name">— David B. <span
+                                                    class="reviewer-location">/ Germany</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="review-pagination" id="reviewDots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Logic Slider cho 3 nút Customer Reviews
+        const reviewsTrack = document.getElementById('reviewsTrack');
+        const reviewDots = document.querySelectorAll('#reviewDots .dot');
+        let currentReviewIndex = 0;
+        const totalReviewSlides = reviewDots.length; // Sẽ tự động đếm là 3
+
+        function changeReviewSlide(index) {
+            currentReviewIndex = index;
+            // Dịch chuyển thanh track: 0%, -100%, -200%
+            reviewsTrack.style.transform = `translateX(-${index * 100}%)`;
+
+            // Đổi màu dấu chấm
+            reviewDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Lặp tự động sau 5s
+        setInterval(() => {
+            currentReviewIndex = (currentReviewIndex + 1) % totalReviewSlides;
+            changeReviewSlide(currentReviewIndex);
+        }, 5000);
+
+        // Bắt sự kiện click vào 3 dấu chấm
+        reviewDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                changeReviewSlide(index);
+            });
+        });
+    </script>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">FROM OUR BLOG</h2>
+
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="public/img/34.png" alt="5 Sweet Outfit Ideas">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>03 MARCH 2021</span>
+                        </div>
+                        <h3 class="blog-title">5 Sweet Outfit Ideas You'll Wear Well Beyond Valentine's Day</h3>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="public/img/35.png" alt="Good With Money">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>03 MARCH 2021</span>
+                        </div>
+                        <h3 class="blog-title">How To Be "Good With Money" According To 4 Female Financial Experts</h3>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="public/img/36.png" alt="Scandi Influencer">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>03 MARCH 2021</span>
+                        </div>
+                        <h3 class="blog-title">This Scandi Influencer's Shoe Collaboration Is The Gift That Keeps On
+                            Giving</h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-5 col-md-12">
+                    <div class="instagram-content">
+                        <div class="instagram-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h2 class="instagram-title">Follow us on Instagram</h2>
+                        <p class="instagram-handle">@vinovatheme</p>
+                        <p class="instagram-description">
+                            Contemporary wardrobe staples and authentic style for the modern<br>
+                            man and women. Follow us for the latest trends.<br>
+                            Tag us and get featured <strong>@vinovatheme</strong>
+                        </p>
+                        <a href="https://instagram.com/vinovatheme" class="instagram-link">instagram.com/vinovatheme</a>
+                    </div>
+                </div>
+
+                <!-- Right Gallery -->
+                <div class="col-lg-7 col-md-12">
+                    <div class="instagram-gallery-new">
+                        <div class="gallery-grid">
+                            <!-- Ảnh 1 - Trái trên -->
+                            <div class="gallery-item item-1">
+                                <img src="public/img/37.png" alt="Instagram post 1" class="img-fluid">
+                            </div>
+
+                            <!-- Ảnh 2 - Giữa trên (lớn nhất) -->
+                            <div class="gallery-item item-2">
+                                <img src="public/img/21.png" alt="Instagram post 2" class="img-fluid">
+                            </div>
+
+                            <!-- Ảnh 3 - Phải trên -->
+                            <div class="gallery-item item-3">
+                                <img src="public/img/38.png" alt="Instagram post 3" class="img-fluid">
+                            </div>
+
+                            <!-- Ảnh 4 - Trái dưới -->
+                            <div class="gallery-item item-4">
+                                <img src="public/img/39.png" alt="Instagram post 4" class="img-fluid">
+                            </div>
+
+                            <!-- Ảnh 5 - Giữa dưới -->
+                            <div class="gallery-item item-5">
+                                <img src="public/img/40.png" alt="Instagram post 5" class="img-fluid">
+                            </div>
+
+                            <!-- Ảnh 6 - Phải dưới -->
+                            <div class="gallery-item item-6">
+                                <img src="public/img/41.png" alt="Instagram post 6" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Free Shipping</h3>
+                        <p class="feature-description">On all U.S order or order above $99</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Support 24/7</h3>
+                        <p class="feature-description">Contact us 24 hours a day, 7 days a week</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">30 Days Return</h3>
+                        <p class="feature-description">Simply return it within 30 days for an exchange.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Salehub -->
+                <div class="footer-section">
+                    <a href="#" class="footer-logo d-block mb-3">
+                        <img src="public/img/42.png" alt="Salehub Logo" class="img-fluid" style="max-width: 150px;">
+                    </a>
+
+                    <div class="contact-info">
+                        <p>Call Us: +1 123 456 789</p>
+                        <p>info@salehub.com</p>
+                        <p>Monday til Friday 10 to 5 EST</p>
+                    </div>
+
+                    <div class="payment-methods mt-3">
+                        <img src="public/img/43.png" alt="Supported Payment Methods" class="img-fluid payment-logo"
+                            style="max-width: 200px;">
+                    </div>
+                </div>
+
+                <!-- Column 2: Customer Support -->
+                <div class="footer-section">
+                    <h3>CUSTOMER SUPPORT</h3>
+                    <ul>
+                        <li><a href="#customer-service">Customer Service</a></li>
+                        <li><a href="#shipping">Shipping and Delivery</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#size-chart">Size Chart</a></li>
+                        <li><a href="#email-signup">Email Signup</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Shop -->
+                <div class="footer-section">
+                    <h3>OUR SHOP</h3>
+                    <ul>
+                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#top-trending">Top Trending</a></li>
+                        <li><a href="#autumn-collection">Autumn Collection</a></li>
+                        <li><a href="#back-in-stock">Back in Stock</a></li>
+                        <li><a href="#brand-tops">Brand Tops</a></li>
+                        <li><a href="#brand-bottoms">Brand Bottoms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="footer-section newsletter-section">
+                    <h3>NEWSLETTER</h3>
+                    <p>Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and
+                        exclusive offers!</p>
+
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email address" class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Salehub LamDaiVi-23211TT2409</p>
+            </div>
+        </div>
+
+        <body id="top">
+            <a href="#top" class="pure-back-to-top" title="Lên đầu trang">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
